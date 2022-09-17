@@ -59,7 +59,7 @@ function setSignal() {
 }
 
 // sc call: isAdmin(<address>)
-async function doThing1() {
+async function check_isAdmin() {
   try {
     const { ethereum } = window;
     if (ethereum) {
@@ -85,7 +85,7 @@ async function doThing1() {
 }
 
 // call verifyAndExecute on the smart contract
-async function doThing2() {
+async function verifyProof() {
   try {
     const { ethereum } = window;
     if (ethereum) {
@@ -99,6 +99,7 @@ async function doThing2() {
       var root = ethers.BigNumber.from(document.getElementById("input3").value)
       var nullifier = ethers.BigNumber.from(document.getElementById("input4").value)
       var proof = document.getElementById("input5").value
+
       var outputBox2 = document.getElementById("output2")
       var outputBox3 = document.getElementById("output3")
 
@@ -229,16 +230,16 @@ function loadData() {
 
   }, false);
 
-  var doThing1_Btn = document.getElementById("doThing1_Btn");
-  doThing1_Btn.addEventListener("click", function() {
-    console.log("doThing1")
-    doThing1()
+  var check_isAdmin_Btn = document.getElementById("check_isAdmin_Btn");
+  check_isAdmin_Btn.addEventListener("click", function() {
+    console.log("check_isAdmin")
+    check_isAdmin()
   }, false);
 
-  var doThing2_Btn = document.getElementById("doThing2_Btn");
-  doThing2_Btn.addEventListener("click", function() {
-    console.log("doThing2")
-    doThing2()
+  var verify_Btn = document.getElementById("verify_Btn");
+  verify_Btn.addEventListener("click", function() {
+    console.log("verifyProof")
+    verifyProof()
   }, false);
 
 

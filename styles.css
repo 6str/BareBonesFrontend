@@ -93,7 +93,7 @@
   /* border: 1px solid red; */
 }
 
-.doThing1_Btn {
+.check_isAdmin_Btn {
     display: flex;
     text-align: center;
     box-shadow: 0 1px 2px #5e5d5b;
@@ -125,7 +125,7 @@
     /* border: 1px solid red; */
 }
 
-.doThing2_Btn {
+.verify_Btn {
   display: flex;
   text-align: center;
   box-shadow: 0 1px 2px #5e5d5b;
