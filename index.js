@@ -31,7 +31,7 @@ if (accounts.length !== 0) {
   const account = accounts[0];
   
   document.getElementById("verificationSignal").value = account;
-  document.getElementById("input2").value = account;
+  document.getElementById("input2").value = account;  //maybe overkill. seems 
   worldID.update({
     signal: account,
   });
@@ -46,7 +46,7 @@ const chainId = await ethereum.request({ method: 'eth_chainId' });
 console.log('chainId: ', chainId)
 
 
-// to set/update the signal param individually if needs
+// to set/update the signal param manually if needs be
 function setSignal() {
   const newSignal = document.getElementById("verificationSignal").value
   worldID.update({
@@ -55,9 +55,9 @@ function setSignal() {
   document.getElementById("input2").value = newSignal
   console.log("updated signal: ", newSignal)
   console.log("test:", worldID.getProps())  // log proof that the signal is what it should be
-  // worldID.enable() //throws: Uncaught TypeError: worldID.enable is not a function
 }
 
+// a quick sanity check that the frontend is talking to the sc
 // sc call: isAdmin(<address>)
 async function check_isAdmin() {
   try {
@@ -84,7 +84,7 @@ async function check_isAdmin() {
   }
 }
 
-// call verifyAndExecute on the smart contract
+// call verifyAndExecute on the smart contract : sc address input is top left input box
 async function verifyProof() {
   try {
     const { ethereum } = window;
@@ -110,9 +110,10 @@ async function verifyProof() {
       outputBox2.value, outputBox3.value = ""
 
       try{
-        outputBox2.value = await connectedContract.verifyAndExecute(signal, root, nullifier, unpackedProof,{ gasLimit: 600000 })
-        //outputBox2.value = await connectedContract.verifyAndExecute(signal, root, nullifier, unpackedProof)
-        console.log("result: ", outputBox2.value)
+         const retVal = await connectedContract.verifyAndExecute(signal, root, nullifier, unpackedProof,{ gasLimit: 600000 })
+         outputBox2.value = retVal
+         //outputBox2.value = await connectedContract.verifyAndExecute(signal, root, nullifier, unpackedProof)
+        console.log("result: ", retVal)
         outputBox3.value = await connectedContract.isVerified(signal)
       }
       catch (error) {
@@ -127,6 +128,9 @@ async function verifyProof() {
   }
 }
 
+// populate the verifyAndExecute inputs and clear outputs
+// signal from signal input at the top
+// merkle, null & proof from the most recent proof
 async function autoloader() {
   document.getElementById("input2").value = document.getElementById("verificationSignal").value  // signal
   document.getElementById("input3").value = proofAutoloader.merkle_root  // merkle root
@@ -218,34 +222,26 @@ function loadData() {
   // event listeners
   var signal_Btn = document.getElementById("signal_Btn");
   signal_Btn.addEventListener("click", function() {
-    console.log("signal_Btn")
     setSignal()
-
   }, false);
 
   var save_Btn = document.getElementById("save_Btn");
   save_Btn.addEventListener("click", function() {
-    console.log("save_Btn")
     saveData()
-
   }, false);
 
   var check_isAdmin_Btn = document.getElementById("check_isAdmin_Btn");
   check_isAdmin_Btn.addEventListener("click", function() {
-    console.log("check_isAdmin")
     check_isAdmin()
   }, false);
 
   var verify_Btn = document.getElementById("verify_Btn");
   verify_Btn.addEventListener("click", function() {
-    console.log("verifyProof")
     verifyProof()
   }, false);
 
-
   var autoloader_Btn = document.getElementById("autoloader_Btn");
   autoloader_Btn.addEventListener("click", function() {
-    console.log("autoloader")
     autoloader()
   }, false);
 }
