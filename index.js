@@ -12,8 +12,8 @@ window.onload = loadData();
 console.log("loading World ID");
 worldID.init("world-id-container", {
   enable_telemetry: true,
-  //action_id: "wid_staging_034a32eef8f9c2d4ac2cca30890c2e76", // on-chain engine
-  action_id: "wid_staging_7a9456d25763ab09db907a6e9fdd289a", // cloud engine
+  action_id: "wid_staging_034a32eef8f9c2d4ac2cca30890c2e76", // on-chain engine
+  //action_id: "wid_staging_7a9456d25763ab09db907a6e9fdd289a", // cloud engine
   on_success: onWorldIDVerified,
 });
 
@@ -110,9 +110,10 @@ async function verifyProof() {
       outputBox2.value, outputBox3.value = ""
 
       try{
-         const retVal = await connectedContract.verifyAndExecute(signal, root, nullifier, unpackedProof,{ gasLimit: 600000 })
-         outputBox2.value = retVal
-         //outputBox2.value = await connectedContract.verifyAndExecute(signal, root, nullifier, unpackedProof)
+        // metamask throws can't estimate gas if txn will revert due to nullifier previously used
+        //const retVal = await connectedContract.verifyAndExecute(signal, root, nullifier, unpackedProof) 
+        const retVal = await connectedContract.verifyAndExecute(signal, root, nullifier, unpackedProof,{ gasLimit: 600000 })
+        outputBox2.value = retVal
         console.log("result: ", retVal)
         outputBox3.value = await connectedContract.isVerified(signal)
       }
