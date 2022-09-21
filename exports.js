@@ -192,32 +192,6 @@ export const abi = [
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "actionIdChain",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "actionIdCloud",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
@@ -819,74 +793,6 @@ export const abi = [
     ],
     "name": "verifyAndExecute",
     "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "signal",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "root",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "nullifierHash",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256[8]",
-        "name": "proof",
-        "type": "uint256[8]"
-      }
-    ],
-    "name": "verifyChainId",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "signal",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "root",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "nullifierHash",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256[8]",
-        "name": "proof",
-        "type": "uint256[8]"
-      }
-    ],
-    "name": "verifyCloudId",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },

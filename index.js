@@ -11,8 +11,9 @@ window.onload = loadData();
 // worldID verify event listener
 console.log("loading World ID");
 worldID.init("world-id-container", {
-  enable_telemetry: true,
-  action_id: "wid_staging_034a32eef8f9c2d4ac2cca30890c2e76", // on-chain engine
+  enable_telemetry: false,
+  action_id: "wid_a4c0eed4ad6a1f24aadbcdd4fcb0ccf7", //d3vent frontend NOT staging
+  //action_id: "wid_staging_034a32eef8f9c2d4ac2cca30890c2e76", // on-chain engine
   //action_id: "wid_staging_7a9456d25763ab09db907a6e9fdd289a", // cloud engine
   on_success: onWorldIDVerified,
 });
@@ -141,7 +142,6 @@ async function autoloader() {
   document.getElementById("output3").value = ""
   console.log("autoloaded proof")
 }
-
 
 // save text in inputs and textarea
 function saveData() {
