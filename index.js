@@ -15,10 +15,10 @@ worldID.init("world-id-container", {
   action_id: "wid_a4c0eed4ad6a1f24aadbcdd4fcb0ccf7", //d3vent frontend NOT staging
   //action_id: "wid_staging_034a32eef8f9c2d4ac2cca30890c2e76", // on-chain engine
   //action_id: "wid_staging_7a9456d25763ab09db907a6e9fdd289a", // cloud engine
-  on_success: onWorldIDVerified,
+  on_success: onWorldIDVerified,   // callback function receives proof after verification on simulator
 });
 
-
+// callback function receives proof after verification on simulator
 function onWorldIDVerified (proof) {
   console.log('world id verified!!')
   console.log(proof);
@@ -57,6 +57,7 @@ function setSignal() {
   console.log("updated signal: ", newSignal)
   console.log("test:", worldID.getProps())  // log proof that the signal is what it should be
 }
+
 
 // a quick sanity check that the frontend is talking to the sc
 // sc call: isAdmin(<address>)
