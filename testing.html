@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Testing</title>
+	<link rel="icon" type="image/x-icon" href="/images/testicon.png">
+    <!-- font awesome -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Open Sans:400,700" rel="stylesheet" type="text/css" />
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" href="testing.css" />
+    
+</head>
+
+
+<body>
+    <div class="infoBanner">
+        <div class="walletInfo">
+            <div id="wallet"></div>
+        </div>
+        
+        <div id="darkmode-container">
+            <input type="checkbox" id="darkmode-chk" class="checkbox"/>
+            <label for="darkmode-chk" id="darkmode-lbl">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </label>
+        </div>
+    </div>
+
+
+    <header>
+		<h2>🧪Testing🧪</h2>
+	</header>
+
+
+
+    <input type="text" id="contractAddress" class="inputs saveable" title="contract address" placeholder="contract address">
+    <input type="text" id="verificationSignal" class="inputs saveable" title="verification signal" placeholder="verification signal">
+    <input type="text" id="meh" class="inputs saveable" title="meh" placeholder="meh">
+    <input type="text" id="inputAdmin" class="inputs saveable" title="inputAdmin" placeholder="inputAdmin">
+    <input type="text" id="outputAdmin" class="inputs" title="outputAdmin" placeholder="outputAdmin">
+
+    <button id="signal_Btn" class="btn">set signal</button>
+    <button id="save_Btn" class="btn" title="save ctrl + s"><u>s</u>ave</button>
+    <button id="do_Btn" class="btn">do</button>
+
+    <textarea id="scratchpad" class="saveable" title="scratch pad" placeholder="scratchpad"></textarea>
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.0/ethers.umd.min.js"
+	integrity="sha512-+Ftowzj6zmwHlez4gpQxd7QQUzK/ocgu10pukN3Pyqblni7yJ9r/WTpNHoYKL4DGOp5givxSUZjJcVY7Az9OAQ=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- <script type="text/javascript" src="//unpkg.com/@worldcoin/id/dist/world-id.js" ></script> -->
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+
+<script src="./testing.js" type="module"></script>
+
+</html>
