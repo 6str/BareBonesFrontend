@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
+
+:root {
+  --lightMode-primary-bg-color: rgb(222, 220, 220);
+  --lightMode-secondary-bg-color: #fff;
+  --lightMode-primary-text-color: rgb(70, 70, 70);
+  --lightMode-secondary-text-color: #999;
+  --darkMode-primary-bg-color: #21222a;
+  --darkMode-secondary-bg-color: #333;
+  --darkMode-primary-text-color: rgb(212, 208, 208);
+  --darkMode-secondary-text-color: rgb(229, 224, 224);
+  
+  --primary-bg-color: var(--darkMode-primary-bg-color);
+  --secondary-bg-color: var(--darkMode-secondary-bg-color);
+  --primary-text-color: var(--darkMode-primary-text-color);
+  --secondary-text-color: var(--darkMode-secondary-text-color);
+
+  --dark-text: rgb(8, 8, 8);
+}
+
+
+* {
+  font-family: "Poppins", sans-serif, monospace;
+  margin: 0;
+  padding: 0;
+  transition: 0.2s linear;
+  color: var(--primary-text-color);
+}
+
+.monospace-fonts {
+  font-family: Lucida Console, Consolas, Monaco, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  font-size: 20px;
+}
+
+body {
+  height: 100%;
+  margin: 0 20px;
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+}
+
+.infoBanner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+
+}
+
+#wallet {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--primary-text-color);
+  font-size: 40px;
+  font-weight: bold;
+  /* border: 1px solid tomato; */
+}
+
+
+#darkmode-container {
+  display: flex;
+  justify-content: end;
+  /* border: 1px solid tomato; */
+}
+
+#darkmode-lbl {
+  height: 20px;
+  width: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #ebebeb;
+  border-radius: 20px;
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#darkmode-lbl:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+
+#darkmode-chk {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+#darkmode-chk:checked + #darkmode-lbl {
+  background: #545454;
+}
+#darkmode-chk:checked + #darkmode-lbl:after {
+  left: 40px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+#darkmode-lbl:active:after {
+  width: 30px;
+}
+
+.fa-moon {
+  color: #111;
+  font-size: 17px;
+}
+
+.fa-sun {
+  color: #f39c12;
+  font-size: 15px;
+}
+
+
+.contract {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#contractAddress {
+    width: 400px;
+    border-radius: 5px;
+}
+
+
+.inputs {
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 10px;
+    color: var(--dark-text);
+}
+
+
+.btn {
+  background-color: lightskyblue;
+  font-weight: bold;
+  height: 40px;
+  border-radius: 5px;
+  padding: 10px;
+  color: var(--dark-text);
+}
+
+
+#scratchpad {
+  margin: 20px 0;
+  /* padding: 10px; */
+  color: var(--dark-text);
+  height: 400px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: lightgray;
+}
